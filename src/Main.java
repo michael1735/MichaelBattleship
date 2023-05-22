@@ -32,6 +32,13 @@ public class Main {
         coordinates = scanner.nextLine();
         Destroyer destroyer = new Destroyer(coordinates);
         board.placeShip(destroyer);
+
+        System.out.printf("%nThe game starts!%n%n");
+        board.outBoard();
+        Player player1 = new Player();
+        System.out.printf("%nTake a shot!%n%n> ");
+        String hitCoor = scanner.next();
+        player1.hit(hitCoor, board);
     }
     /*
     F3 F7

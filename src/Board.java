@@ -89,7 +89,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -99,7 +99,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -112,7 +112,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (emptyBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -122,7 +122,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (emptyBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -134,7 +134,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (emptyBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -144,7 +144,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -155,7 +155,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (emptyBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -164,7 +164,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (emptyBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -175,7 +175,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (emptyBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -184,7 +184,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -197,7 +197,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -206,7 +206,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (emptyBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -217,7 +217,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (emptyBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -226,7 +226,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (emptyBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -237,7 +237,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (emptyBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -246,7 +246,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -342,7 +342,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -352,7 +352,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -365,7 +365,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (emptyBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -375,7 +375,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (emptyBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -387,7 +387,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (emptyBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -397,7 +397,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -408,7 +408,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (emptyBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -417,7 +417,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (emptyBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -428,7 +428,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (emptyBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -437,7 +437,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -450,7 +450,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -459,7 +459,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (emptyBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -470,7 +470,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (emptyBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -479,7 +479,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (emptyBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -490,7 +490,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (emptyBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -499,7 +499,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -595,7 +595,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -605,7 +605,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -618,7 +618,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (emptyBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -628,7 +628,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (emptyBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -640,7 +640,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (emptyBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -650,7 +650,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -661,7 +661,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (emptyBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -670,7 +670,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (emptyBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -681,7 +681,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (emptyBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -690,7 +690,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -703,7 +703,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -712,7 +712,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (emptyBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -723,7 +723,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (emptyBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -732,7 +732,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (emptyBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -743,7 +743,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (emptyBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -752,7 +752,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -848,7 +848,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -858,7 +858,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -871,7 +871,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (emptyBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -881,7 +881,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (emptyBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -893,7 +893,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (emptyBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -903,7 +903,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -914,7 +914,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (emptyBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -923,7 +923,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (emptyBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -934,7 +934,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (emptyBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -943,7 +943,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -956,7 +956,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -965,7 +965,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (emptyBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -976,7 +976,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (emptyBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -985,7 +985,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (emptyBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -996,7 +996,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (emptyBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1005,7 +1005,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1101,7 +1101,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1111,7 +1111,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (emptyBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1124,7 +1124,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (emptyBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -1134,7 +1134,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (emptyBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1146,7 +1146,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (emptyBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1156,7 +1156,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1167,7 +1167,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (emptyBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1176,7 +1176,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (emptyBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1187,7 +1187,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (emptyBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1196,7 +1196,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (emptyBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1209,7 +1209,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1218,7 +1218,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (emptyBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1229,7 +1229,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (emptyBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1238,7 +1238,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (emptyBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1249,7 +1249,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (emptyBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1258,7 +1258,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (emptyBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
