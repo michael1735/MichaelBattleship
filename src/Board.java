@@ -15,6 +15,20 @@ public class Board {
             {"J", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"}
     };
 
+    public String[][] tempBoard = {
+            {" ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"},
+            {"A", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"B", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"C", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"D", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"E", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"F", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"G", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"H", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"I", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"},
+            {"J", "~", "~", "~", "~", "~", "~", "~", "~", "~", "~"}
+    };
+
     public void placeShip(AircraftCarrier ship) {
         int[] firstCoor = new int[]{
                 findCoors(ship.coordinates[0].substring(0, 1).charAt(0)),
@@ -1329,6 +1343,15 @@ public class Board {
 
     public void outBoard() {
         for (String[] strings : emptyBoard) {
+            for (String string : strings) {
+                System.out.print(string + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void outEmptyBoard() {
+        for (String[] strings : tempBoard) {
             for (String string : strings) {
                 System.out.print(string + " ");
             }

@@ -34,7 +34,7 @@ public class Main {
         board.placeShip(destroyer);
 
         System.out.printf("%nThe game starts!%n%n");
-        board.outBoard();
+        board.outEmptyBoard();
         Player player1 = new Player();
         System.out.printf("%nTake a shot!%n%n> ");
         String hitCoor = scanner.next();

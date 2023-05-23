@@ -18,7 +18,7 @@ public class Player {
          */
         while (!valid){
             if (coors[0] > 10 || coors[0] < 1 || coors[1] > 10 || coors[1] < 1) {
-                System.out.printf("%n%nError! You entered the wrong coordinates! Try again:%n%n> ");
+                System.out.printf("%nError! You entered the wrong coordinates! Try again:%n%n> ");
                 reInput(coors);
                 continue;
             }
@@ -41,13 +41,13 @@ public class Player {
                     board.emptyBoard[coors[0]][coors[1]] = "X";
                 } // set all the coordinates accompanied by that ship to "X"*/
                 board.outBoard();
-                System.out.println("%n%nYou hit a ship!");
+                System.out.printf("%nYou hit a ship!");
                 valid = true;
             } else {
                 board.emptyBoard[coors[0]][coors[1]] = "M";
                 valid = true;
                 board.outBoard();
-                System.out.printf("%n%nYou missed!");
+                System.out.printf("%nYou missed!");
             }
         }
     }
@@ -93,5 +93,6 @@ public class Player {
         String first = tmpScanner.next();
         coors[0] = findCoors(first.substring(0, 1).charAt(0));
         coors[1] = Integer.parseInt(first.substring(1));
+        System.out.println();
     }
 }
