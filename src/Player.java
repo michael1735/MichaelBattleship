@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
 public class Player {
-    public void hit(String coordinates, Board board) {
+    public int hit(String coordinates, Board board, int shipNum) {
         int[] coors = {
                 findCoors(coordinates.charAt(0)),
                 Integer.parseInt(coordinates.substring(1))
         };
 
-        int shipType = 0;
         boolean valid = false;
         /*
         shipCoors {
@@ -22,41 +21,111 @@ public class Player {
                 reInput(coors);
                 continue;
             }
-            if (board.emptyBoard[coors[0]][coors[1]].equals("O")) {
-                // set the coordinates that the ship takes to "X"
-                board.emptyBoard[coors[0]][coors[1]] = "X";
-                board.tempBoard[coors[0]][coors[1]] = "X";
-               /* for (int i = 0; i < shipCoors.length; i++) {
-                    for (int j = 0; j < shipCoors[i].length; j++) {
-                        if (shipCoors[i][j][0] == coors[0] && shipCoors[i][j][1] == coors[1]) {
-                            shipType = i;
-                            break;
+            String ch = board.mainBoard[coors[0]][coors[1]];
+            switch (ch) {
+                case "O" -> {
+                    board.mainBoard[coors[0]][coors[1]] = "X";
+                    board.tempBoard[coors[0]][coors[1]] = "X";
+                    board.outEmptyBoard();
+                    if (determineIfSank(coors[0], coors[1], board.mainBoard)) {
+                        shipNum -= 1;
+                        if (shipNum != 0) {
+                            System.out.printf("%nYou sank a ship! Specify a new target:%n%n> ");
+                        } else {
+                            System.out.println("You sank the last ship. You won. Congratulations!");
                         }
+
+                    } else {
+                        System.out.printf("%nYou hit a ship! Try again:%n%n> ");
                     }
+//                    board.outEmptyBoard(); TODO
                 }
-                for (int i = 0; i < shipCoors[shipType].length; i++) {
-                    coors = new int[]{
-                            shipCoors[shipType][i][0],
-                            shipCoors[shipType][i][1]
-                    };
-                    board.emptyBoard[coors[0]][coors[1]] = "X";
-                } // set all the coordinates accompanied by that ship to "X"*/
-                board.outEmptyBoard();
-                System.out.printf("%nYou hit a ship!%n%n");
-                board.outBoard();
-                valid = true;
-            } else {
-                board.emptyBoard[coors[0]][coors[1]] = "M";
-                board.tempBoard[coors[0]][coors[1]] = "M";
-                valid = true;
-                board.outEmptyBoard();
-                System.out.printf("%nYou missed!%n%n");
-                board.outBoard();
+                case "X" -> {
+                    board.outEmptyBoard();
+                    if (determineIfSank(coors[0], coors[1], board.mainBoard)) {
+                        System.out.printf("%nYou sank a ship! Specify a new target:%n%n> ");
+                    } else {
+                        System.out.printf("%nYou hit a ship! Try again:%n%n> ");
+                    }
+//                    board.outEmptyBoard(); TODO
+                }
+                case "M" -> {
+                    board.outEmptyBoard();
+                    System.out.printf("%nYou missed. Try again:%n%n> ");
+//                    board.outEmptyBoard(); TODO
+                }
+                case "~" -> {
+                    board.mainBoard[coors[0]][coors[1]] = "M";
+                    board.tempBoard[coors[0]][coors[1]] = "M";
+                    board.outEmptyBoard();
+                    System.out.printf("%nYou missed. Try again:%n%n> ");
+//                    board.outEmptyBoard();
+                }
             }
+            valid = true;
         }
+        return shipNum;
     }
 
-    public int findCoors(char ch) {
+    private boolean determineIfSank(int row, int col, String[][] board) {
+        int tmpCol = col;
+        int tmpRow = row;
+        boolean sank = true;
+        if (col - 1 > 0) {
+            if (board[row][col - 1].equals("O") || board[row][col - 1].equals("X")) {
+                tmpCol = tmpCol - 1;
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpCol > 0) { // FIXME : mp
+                    if (board[tmpRow][tmpCol].equals("O")) {
+                        sank = false;
+                        break;
+                    }
+                    tmpCol--;
+                }
+            }
+        }
+        tmpCol = col;
+        if (row - 1 > 0) {
+            if (board[row - 1][col].equals("O") || board[row - 1][col].equals("X")) {
+                tmpRow = tmpRow - 1;
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpRow > 0) { // FIXME: maybe problems
+                    if (board[tmpRow][tmpCol].equals("O")) {
+                        sank = false;
+                        break;
+                    }
+                    tmpRow--;
+                }
+            }
+        }
+        tmpRow = row;
+        if (col + 1 <= 10) {
+            if (board[row][col + 1].equals("O") || board[row][col + 1].equals("X")) {
+                tmpCol = tmpCol + 1;
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpCol <= 10) { // FIXME: Mp
+                    if (board[tmpRow][tmpCol].equals("O")) {
+                        sank = false;
+                        break;
+                    }
+                    tmpCol++;
+                }
+            }
+        }
+        tmpCol = col;
+        if (row + 1 <= 10) {
+            if (board[row + 1][col].equals("O") || board[row + 1][col].equals("X")) {
+                tmpRow += 1;
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpRow <= 10) { // FIXME: MP
+                    if (board[tmpRow][tmpCol].equals("O")) {
+                        sank = false;
+                        break;
+                    }
+                    tmpRow++;
+                }
+            }
+        }
+        return sank;
+    }
+
+    private int findCoors(char ch) {
         switch (ch) {
             case 'A' -> {
                 return 1;

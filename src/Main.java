@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Board board = new Board();
         board.outBoard();
+        int shipNum = 5;
 
         System.out.println("Enter the coordinates of the Aircraft Carrier (5 cells):\n");
         System.out.print("> ");
@@ -37,8 +38,11 @@ public class Main {
         board.outEmptyBoard();
         Player player1 = new Player();
         System.out.printf("%nTake a shot!%n%n> ");
-        String hitCoor = scanner.next();
-        player1.hit(hitCoor, board);
+        while (shipNum != 0) {
+            String hitCoor = scanner.next();
+            System.out.println();
+            shipNum = player1.hit(hitCoor, board, shipNum);
+        }
     }
     /*
     F3 F7
