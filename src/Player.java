@@ -38,7 +38,6 @@ public class Player {
                     } else {
                         System.out.printf("%nYou hit a ship! Try again:%n%n> ");
                     }
-//                    board.outEmptyBoard(); TODO
                 }
                 case "X" -> {
                     board.outEmptyBoard();
@@ -47,19 +46,16 @@ public class Player {
                     } else {
                         System.out.printf("%nYou hit a ship! Try again:%n%n> ");
                     }
-//                    board.outEmptyBoard(); TODO
                 }
                 case "M" -> {
                     board.outEmptyBoard();
                     System.out.printf("%nYou missed. Try again:%n%n> ");
-//                    board.outEmptyBoard(); TODO
                 }
                 case "~" -> {
                     board.mainBoard[coors[0]][coors[1]] = "M";
                     board.tempBoard[coors[0]][coors[1]] = "M";
                     board.outEmptyBoard();
                     System.out.printf("%nYou missed. Try again:%n%n> ");
-//                    board.outEmptyBoard();
                 }
             }
             valid = true;
@@ -74,7 +70,7 @@ public class Player {
         if (col - 1 > 0) {
             if (board[row][col - 1].equals("O") || board[row][col - 1].equals("X")) {
                 tmpCol = tmpCol - 1;
-                while (!(board[tmpRow][tmpCol].equals("~")) && tmpCol > 0) { // FIXME : mp
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpCol > 0) {
                     if (board[tmpRow][tmpCol].equals("O")) {
                         sank = false;
                         break;
@@ -87,7 +83,7 @@ public class Player {
         if (row - 1 > 0) {
             if (board[row - 1][col].equals("O") || board[row - 1][col].equals("X")) {
                 tmpRow = tmpRow - 1;
-                while (!(board[tmpRow][tmpCol].equals("~")) && tmpRow > 0) { // FIXME: maybe problems
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpRow > 0) {
                     if (board[tmpRow][tmpCol].equals("O")) {
                         sank = false;
                         break;
@@ -100,7 +96,7 @@ public class Player {
         if (col + 1 <= 10) {
             if (board[row][col + 1].equals("O") || board[row][col + 1].equals("X")) {
                 tmpCol = tmpCol + 1;
-                while (!(board[tmpRow][tmpCol].equals("~")) && tmpCol <= 10) { // FIXME: Mp
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpCol <= 10) {
                     if (board[tmpRow][tmpCol].equals("O")) {
                         sank = false;
                         break;
@@ -113,7 +109,7 @@ public class Player {
         if (row + 1 <= 10) {
             if (board[row + 1][col].equals("O") || board[row + 1][col].equals("X")) {
                 tmpRow += 1;
-                while (!(board[tmpRow][tmpCol].equals("~")) && tmpRow <= 10) { // FIXME: MP
+                while (!(board[tmpRow][tmpCol].equals("~")) && tmpRow <= 10) {
                     if (board[tmpRow][tmpCol].equals("O")) {
                         sank = false;
                         break;
