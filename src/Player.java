@@ -47,10 +47,8 @@ public class Player {
                         System.out.printf("%nYou hit a ship!%n");
                     }
                 }
-                case "M" -> {
-//                    board.outEmptyBoard();
-                    System.out.printf("%nYou missed.%n");
-                }
+                case "M" -> //                    board.outEmptyBoard();
+                        System.out.printf("%nYou missed.%n");
                 case "~" -> {
                     board.mainBoard[coors[0]][coors[1]] = "M";
                     board.tempBoard[coors[0]][coors[1]] = "M";
