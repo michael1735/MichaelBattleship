@@ -58,7 +58,7 @@ public class Board {
                 index = firstCoor[1]; // easier for array queries
             } else { // this can be simplified to else
                 // 输出报错, 重新输入
-                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -66,7 +66,7 @@ public class Board {
             // in case they don't have length 5
             if (max - min + 1 != ship.getLength()) {
                 // 输出报错信息, 重新输入
-                System.out.printf("Error! Wrong length of the %s! Try again:%n%n> ", ship.getName());
+                System.out.printf("%nError! Wrong length of the %s! Try again:%n%n> ", ship.getName());
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -75,14 +75,14 @@ public class Board {
                 if (firstCoor[0] == secondCoor[0]) {
                     if (mainBoard[index][i].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
                 } else if (firstCoor[1] == secondCoor[1]) {
                     if (mainBoard[i][index].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
@@ -103,7 +103,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -113,7 +113,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -126,7 +126,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (mainBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                                System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -136,7 +136,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (mainBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -148,7 +148,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (mainBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -158,7 +158,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (mainBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -169,7 +169,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (mainBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -178,7 +178,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (mainBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -189,7 +189,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (mainBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -198,7 +198,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (mainBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -211,7 +211,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -220,7 +220,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (mainBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -231,7 +231,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (mainBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -240,7 +240,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (mainBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -251,7 +251,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (mainBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -260,7 +260,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -279,6 +279,7 @@ public class Board {
                 }
             }
         }
+        System.out.println();
         outBoard();
     }
 
@@ -311,7 +312,7 @@ public class Board {
                 index = firstCoor[1]; // easier for array queries
             } else { // this can be simplified to else
                 // 输出报错, 重新输入
-                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -319,7 +320,7 @@ public class Board {
             // in case they don't have length 5
             if (max - min + 1 != ship.getLength()) {
                 // 输出报错信息, 重新输入
-                System.out.printf("Error! Wrong length of the %s! Try again:%n%n> ", ship.getName());
+                System.out.printf("%nError! Wrong length of the %s! Try again:%n%n> ", ship.getName());
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -328,14 +329,14 @@ public class Board {
                 if (firstCoor[0] == secondCoor[0]) {
                     if (mainBoard[index][i].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
                 } else if (firstCoor[1] == secondCoor[1]) {
                     if (mainBoard[i][index].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
@@ -356,7 +357,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -366,7 +367,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -379,7 +380,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (mainBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                                System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -389,7 +390,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (mainBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -401,7 +402,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (mainBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -411,7 +412,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (mainBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -422,7 +423,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (mainBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -431,7 +432,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (mainBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -442,7 +443,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (mainBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -451,7 +452,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (mainBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -464,7 +465,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -473,7 +474,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (mainBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -484,7 +485,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (mainBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -493,7 +494,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (mainBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -504,7 +505,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (mainBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -513,7 +514,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -532,6 +533,7 @@ public class Board {
                 }
             }
         }
+        System.out.println();
         outBoard();
     }
 
@@ -564,7 +566,7 @@ public class Board {
                 index = firstCoor[1]; // easier for array queries
             } else { // this can be simplified to else
                 // 输出报错, 重新输入
-                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -572,7 +574,7 @@ public class Board {
             // in case they don't have length 5
             if (max - min + 1 != ship.getLength()) {
                 // 输出报错信息, 重新输入
-                System.out.printf("Error! Wrong length of the %s! Try again:%n%n> ", ship.getName());
+                System.out.printf("%nError! Wrong length of the %s! Try again:%n%n> ", ship.getName());
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -581,14 +583,14 @@ public class Board {
                 if (firstCoor[0] == secondCoor[0]) {
                     if (mainBoard[index][i].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
                 } else if (firstCoor[1] == secondCoor[1]) {
                     if (mainBoard[i][index].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
@@ -609,7 +611,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -619,7 +621,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -632,7 +634,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (mainBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                                System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -642,7 +644,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (mainBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -654,7 +656,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (mainBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -664,7 +666,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (mainBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -675,7 +677,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (mainBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -684,7 +686,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (mainBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -695,7 +697,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (mainBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -704,7 +706,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (mainBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -717,7 +719,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -726,7 +728,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (mainBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -737,7 +739,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (mainBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -746,7 +748,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (mainBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -757,7 +759,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (mainBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -766,7 +768,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -785,6 +787,7 @@ public class Board {
                 }
             }
         }
+        System.out.println();
         outBoard();
     }
 
@@ -817,7 +820,7 @@ public class Board {
                 index = firstCoor[1]; // easier for array queries
             } else { // this can be simplified to else
                 // 输出报错, 重新输入
-                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -825,7 +828,7 @@ public class Board {
             // in case they don't have length 5
             if (max - min + 1 != ship.getLength()) {
                 // 输出报错信息, 重新输入
-                System.out.printf("Error! Wrong length of the %s! Try again:%n%n> ", ship.getName());
+                System.out.printf("%nError! Wrong length of the %s! Try again:%n%n> ", ship.getName());
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -834,14 +837,14 @@ public class Board {
                 if (firstCoor[0] == secondCoor[0]) {
                     if (mainBoard[index][i].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
                 } else if (firstCoor[1] == secondCoor[1]) {
                     if (mainBoard[i][index].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
@@ -862,7 +865,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -872,7 +875,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -885,7 +888,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (mainBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                                System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -895,7 +898,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (mainBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -907,7 +910,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (mainBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -917,7 +920,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (mainBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -928,7 +931,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (mainBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -937,7 +940,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (mainBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -948,7 +951,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (mainBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -957,7 +960,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (mainBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -970,7 +973,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -979,7 +982,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (mainBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -990,7 +993,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (mainBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -999,7 +1002,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (mainBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1010,7 +1013,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (mainBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1019,7 +1022,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1038,6 +1041,7 @@ public class Board {
                 }
             }
         }
+        System.out.println();
         outBoard();
     }
 
@@ -1070,7 +1074,7 @@ public class Board {
                 index = firstCoor[1]; // easier for array queries
             } else { // this can be simplified to else
                 // 输出报错, 重新输入
-                System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -1078,7 +1082,7 @@ public class Board {
             // in case they don't have length 5
             if (max - min + 1 != ship.getLength()) {
                 // 输出报错信息, 重新输入
-                System.out.printf("Error! Wrong length of the %s! Try again:%n%n> ", ship.getName());
+                System.out.printf("%nError! Wrong length of the %s! Try again:%n%n> ", ship.getName());
                 reInput(firstCoor, secondCoor);
                 continue;
             }
@@ -1087,14 +1091,14 @@ public class Board {
                 if (firstCoor[0] == secondCoor[0]) {
                     if (mainBoard[index][i].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
                 } else if (firstCoor[1] == secondCoor[1]) {
                     if (mainBoard[i][index].equals("O")) {
                         // 输出报错, 重新输入
-                        System.out.printf("Error! Wrong ship location! Try again:%n%n> ");
+                        System.out.printf("%nError! Wrong ship location! Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue outer;
                     }
@@ -1115,7 +1119,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[index - 1][min - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1125,7 +1129,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     if (min - 1 >= 0) {
                         if (mainBoard[min - 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1138,7 +1142,7 @@ public class Board {
                     if (min - 1 >= 0) {
                         for (int i = min; i <= max; i++) {
                             if (mainBoard[index - 1][i].equals("O")) {
-                                System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                                System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                                 reInput(firstCoor, secondCoor);
                                 continue outer;
                             }
@@ -1148,7 +1152,7 @@ public class Board {
             } else {
                 if (min - 1 >= 0) {
                     if (mainBoard[min - 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1160,7 +1164,7 @@ public class Board {
                 if (index - 1 > 0) {
                     if (max + 1 < 11) {
                         if (mainBoard[index - 1][max + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1170,7 +1174,7 @@ public class Board {
                 if (min - 1 >= 0) {
                     if (index + 1 <= 10) {
                         if (mainBoard[min - 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1181,7 +1185,7 @@ public class Board {
             if (!vertical) {
                 if (index - 1 >= 10 && min - 1 >= 0) {
                     if (mainBoard[index - 1][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1190,7 +1194,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index - 1 <= 0) {
                         if (mainBoard[max + 1][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1201,7 +1205,7 @@ public class Board {
             if (!vertical) {
                 if (index + 1 <= 10 && max + 1 <= 10) {
                     if (mainBoard[index + 1][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1210,7 +1214,7 @@ public class Board {
                 if (max + 1 <= 10) {
                     if (index + 1 <= 10) {
                         if (mainBoard[max + 1][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue;
                         }
@@ -1223,7 +1227,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[index - 1][i].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1232,7 +1236,7 @@ public class Board {
             } else {
                 if (max + 1 <= 10) {
                     if (mainBoard[max + 1][index].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1243,7 +1247,7 @@ public class Board {
             if (!vertical) {
                 if (min - 1 >= 0) {
                     if (mainBoard[index][min - 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1252,7 +1256,7 @@ public class Board {
                 if (index - 1 >= 0) {
                     for (int i = min; i <= max ; i++) {
                         if (mainBoard[i][index - 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1263,7 +1267,7 @@ public class Board {
             if (!vertical) {
                 if (max + 1 <= 10) {
                     if (mainBoard[index][max + 1].equals("O")) {
-                        System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                        System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                         reInput(firstCoor, secondCoor);
                         continue;
                     }
@@ -1272,7 +1276,7 @@ public class Board {
                 if (index + 1 <= 10) {
                     for (int i = min; i <= max; i++) {
                         if (mainBoard[i][index + 1].equals("O")) {
-                            System.out.printf("Error! You placed it too close to another one. Try again:%n%n> ");
+                            System.out.printf("%nError! You placed it too close to another one. Try again:%n%n> ");
                             reInput(firstCoor, secondCoor);
                             continue outer;
                         }
@@ -1291,6 +1295,7 @@ public class Board {
                 }
             }
         }
+        System.out.println();
         outBoard();
     }
 

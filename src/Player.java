@@ -17,7 +17,7 @@ public class Player {
          */
         while (!valid){
             if (coors[0] > 10 || coors[0] < 1 || coors[1] > 10 || coors[1] < 1) {
-                System.out.printf("%nError! You entered wrong coordinates! Try again:%n%n> ");
+                System.out.printf("%nError! You entered wrong coordinates! Try again:%n");
                 reInput(coors);
                 continue;
             }
@@ -26,36 +26,36 @@ public class Player {
                 case "O" -> {
                     board.mainBoard[coors[0]][coors[1]] = "X";
                     board.tempBoard[coors[0]][coors[1]] = "X";
-                    board.outEmptyBoard();
+//                    board.outEmptyBoard();
                     if (determineIfSank(coors[0], coors[1], board.mainBoard)) {
                         shipNum -= 1;
                         if (shipNum != 0) {
-                            System.out.printf("%nYou sank a ship! Specify a new target:%n%n> ");
+                            System.out.printf("%nYou sank a ship! Specify a new target:%n");
                         } else {
                             System.out.println("You sank the last ship. You won. Congratulations!");
                         }
 
                     } else {
-                        System.out.printf("%nYou hit a ship! Try again:%n%n> ");
+                        System.out.printf("%nYou hit a ship!%n");
                     }
                 }
                 case "X" -> {
-                    board.outEmptyBoard();
+//                    board.outEmptyBoard();
                     if (determineIfSank(coors[0], coors[1], board.mainBoard)) {
-                        System.out.printf("%nYou sank a ship! Specify a new target:%n%n> ");
+                        System.out.printf("%nYou sank a ship! Specify a new target:%n");
                     } else {
-                        System.out.printf("%nYou hit a ship! Try again:%n%n> ");
+                        System.out.printf("%nYou hit a ship!%n");
                     }
                 }
                 case "M" -> {
-                    board.outEmptyBoard();
-                    System.out.printf("%nYou missed. Try again:%n%n> ");
+//                    board.outEmptyBoard();
+                    System.out.printf("%nYou missed.%n");
                 }
                 case "~" -> {
                     board.mainBoard[coors[0]][coors[1]] = "M";
                     board.tempBoard[coors[0]][coors[1]] = "M";
-                    board.outEmptyBoard();
-                    System.out.printf("%nYou missed. Try again:%n%n> ");
+//                    board.outEmptyBoard();
+                    System.out.printf("%nYou missed.%n");
                 }
             }
             valid = true;
